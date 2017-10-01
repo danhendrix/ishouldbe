@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+export default class UserHistory extends Component {
     constructor(props) {
         console.log('hello?')
         super(props)
-        this.thing = "hey!";
+        this.thing = "history!!";
     }
     render() {
         return (
-            <div className='home'>
-                <h1>hello???</h1>
+            <div className='user-history'>
+                <h1>hello from user history</h1>
                 <h3>{this.thing}</h3>
             </div>
         )
     }
 }
-
-export default Home;
