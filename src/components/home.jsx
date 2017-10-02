@@ -4,13 +4,34 @@ class Home extends Component {
     constructor(props) {
         console.log('hello?')
         super(props)
-        this.thing = "hey!";
+        this.state = {
+            messages: ['hello!',
+            'yoo!!',
+            'oh yeeeah'
+            ],
+            updated: false
+        }
+        this.addOne = this.addOne.bind(this);
+    }
+
+    addOne() {
+        this.setState({
+            messages: this.state.messages.concat("one more!")
+        })
     }
     render() {
         return (
             <div className='home'>
-                <h1>hello???</h1>
-                <h3>{this.thing}</h3>
+                <ul>
+                    {this.state.messages.map(item => (
+                        <li>
+                            <a href="#">{item}</a>
+                        </li>
+                    ))}
+                    <li>
+                        <span onClick={this.addOne}>Add one more!</span>
+                    </li>
+                </ul>
             </div>
         )
     }
